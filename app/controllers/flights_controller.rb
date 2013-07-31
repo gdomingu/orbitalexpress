@@ -5,6 +5,12 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+    # commented out temporarily
+    # @flight_search = Flight.search(params[:search])
+
+    #@departures = @flights.
+
+
 
     respond_to do |format|
       format.html # index.html.erb
