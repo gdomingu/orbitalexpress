@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Weekday.delete_all
+LaunchWindow.delete_all
+
+weekdays = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+]
+
+weekdays.each do |day|
+  Weekday.create(
+    :name => day
+    )
+end
+
+time = Time.strptime("00:00", "%H:%M")
+  24.times do |x|
+    LaunchWindow.create(
+    :hour => time + x.hours
+    )
+  end
