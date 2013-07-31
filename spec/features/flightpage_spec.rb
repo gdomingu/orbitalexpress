@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-
+# patsy will implement full text search on flights by origin spaceport, destination spaceport & flight time
 describe "Flightpage" do
   before do
     visit root_path
