@@ -1,4 +1,6 @@
 class FlightsController < ApplicationController
+  skip_before_filter :require_login
+
   # GET /flights
   # GET /flights.json
   def index

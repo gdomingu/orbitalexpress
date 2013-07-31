@@ -1,0 +1,34 @@
+%nav.top-bar
+  %ul.title-area
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+  %section.top-bar-section
+    / Left Nav Section
+    %ul.left
+      %li.divider
+      %li.name
+        %h1
+          =link_to("Home", root_path)
+      %li.divider
+      %li.name
+        =link_to("Flights", flights_path)
+      %li.divider
+    %ul.right
+      - if current_user
+        %li.divider
+        %li.name
+          = link_to("#{current_user.email}", user_path(current_user.id))
+        %li.divider
+        %li.name
+          = link_to("Log out", logout_path, :method => :delete)
+      - else
+        %li.divider
+        %li.name
+          = link_to("Sign up", new_user_path)
+        %li.divider
+        %li.name
+          = link_to("Sign up AJAX", new_user_path, :remote => true, :data => {"reveal-id" => "modal_window"})
+        %li.divider
+        %li.name
+          = link_to("Sign in", login_path, :remote => true, :data => {"reveal-id" => "modal_window"})
