@@ -6,7 +6,7 @@ FactoryGirl.define do
 
   # factory :location, aliases: [:arrival_loc] do
   #   name "San Francisco"
-  #   spaceport "SF Intergalactic Spaceport"
+  #   spaceport "SF Intergalactic"
   # end
 
   factory :weekday,  aliases: [:wday] do
@@ -39,11 +39,6 @@ FactoryGirl.define do
     departure_loc
     arrival_loc
     wday
-    # association :launch_hour_id, factory: :launch_windows, hour: 6
-    # association :docking_hour_id, factory: :launch_windows, hour: 6
-    # association :launch_from_id, factory: :locations, name: "Alderaan"
-    # association :docking_at_id, factory: :locations, name: "Alderaan"
-    # association :weekday_id, factory: :locations, name: "Sunday"
   end
 
 end
