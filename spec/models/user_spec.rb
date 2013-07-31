@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @user = FactoryGirl.create(:user)
+  end
+  it "is created" do
+    @user.save
+    users = User.all
+    expect(users).to include(@user)
+  end
 end
