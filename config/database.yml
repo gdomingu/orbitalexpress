@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: orbitexpress_development
+  pool: 5
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: orbitexpress_test
+  pool: 5
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: orbitexpress_production
+  pool: 5
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
