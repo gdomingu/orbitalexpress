@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "flights_weekdays", :force => true do |t|
+    t.integer "flight_id"
+    t.integer "weekday_id"
+  end
+
+  create_table "launch_windows", :force => true do |t|
+    t.time     "hour"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "spaceport"
@@ -54,6 +65,12 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
     t.string   "salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "weekdays", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
