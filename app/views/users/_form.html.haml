@@ -1,4 +1,5 @@
-= form_for @user do |f|
+%h4 Register for the ride of your life...
+= form_for @user, :remote => true do |f|
   - if @user.errors.any?
     #error_explanation
       %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
@@ -6,16 +7,13 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .large-4.columns
     = f.label :username
     = f.text_field :username
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
+  .large-4.columns
     = f.label :password
     = f.password_field :password
-  .field
+  .large-4.columns
     = f.label :password_confirmation
     = f.password_field :password_confirmation
   .actions
