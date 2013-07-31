@@ -1,5 +1,7 @@
 Orbitexpress::Application.routes.draw do
 
+  get 'search' => 'flights#index', :as => "search"
+
   resources :seats
 
 
