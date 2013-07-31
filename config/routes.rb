@@ -1,5 +1,8 @@
 Orbitexpress::Application.routes.draw do
 
+  resources :seats
+
+
   resources :reservations
 
 
