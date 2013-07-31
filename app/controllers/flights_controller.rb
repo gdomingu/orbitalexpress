@@ -18,6 +18,9 @@ class FlightsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   # GET /flights/1
   # GET /flights/1.json
   def show

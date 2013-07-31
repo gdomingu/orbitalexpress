@@ -11,6 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.mouse
+//= require jquery.ui.position
+//= require jquery.ui.datepicker
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
