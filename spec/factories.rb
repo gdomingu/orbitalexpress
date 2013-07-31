@@ -1,13 +1,13 @@
 FactoryGirl.define do
-  factory :location,  aliases: [:departure_loc, :arrival_loc] do
+  factory :location do
     name "Alderaan"
     spaceport "King's Pass"
   end
 
-    # factory :location do
-    #   name "San Francisco"
-    #   spaceport "SF Intergalactic Spaceport"
-    # end
+  # factory :location, aliases: [:arrival_loc] do
+  #   name "San Francisco"
+  #   spaceport "SF Intergalactic Spaceport"
+  # end
 
   factory :weekday,  aliases: [:wday] do
     name "Sunday"
