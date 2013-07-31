@@ -1,0 +1,12 @@
+body {
+  background-image: url('http://hdwallsize.com/wp-content/uploads/2013/05/Free-Download-Galaxy-Wallpaper-HD-Dekstop.jpg');
+  background-position: bottom;
+}
+
+#mainwrapper{
+  background-color: white;
+  opacity: .95;
+  width:90%;
+  margin: auto;
+  height:90%;
+}
