@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Seat:
+  = @reservation.seat_id
+%p
+  %b User:
+  = @reservation.user_id
+%p
+  %b Flight:
+  = @reservation.flight_id
+%p
+  %b Date of flight:
+  = @reservation.date_of_flight
+
+= link_to 'Edit', edit_reservation_path(@reservation)
+\|
+= link_to 'Back', reservations_path

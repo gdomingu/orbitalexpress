@@ -11,13 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731012450) do
+ActiveRecord::Schema.define(:version => 20130731024851) do
+
+  create_table "flights", :force => true do |t|
+    t.string   "name"
+    t.integer  "launch_hour_id"
+    t.integer  "docking_hour_id"
+    t.integer  "launching_from_id"
+    t.integer  "docking_at_id"
+    t.integer  "weekday_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "spaceport"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "reservations", :force => true do |t|
+    t.integer  "seat_id"
+    t.integer  "user_id"
+    t.integer  "flight_id"
+    t.datetime "date_of_flight"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
