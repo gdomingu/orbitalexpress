@@ -6,6 +6,7 @@ describe "Location" do
     FactoryGirl.create(:docking_location)
   end
 
+##Gabe is going to do model test for location and flight
 
 
 
