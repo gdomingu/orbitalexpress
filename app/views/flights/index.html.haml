@@ -1,8 +1,9 @@
 %h1 Welcome to Orbital Express
 
-= form_tag search_path, :method => "get" do
-  = text_field_tag "query"
-  = button_tag "Search", :type => "submit", :name => nil
+%div.large-4.columns
+  = form_tag search_path, :method => "get" do
+    = text_field_tag "query"
+    = button_tag "Search", :type => "submit", :name => nil
 
 %table
   %tr

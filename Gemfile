@@ -13,7 +13,7 @@ gem 'binding_of_caller'
 gem 'meta_request'
 gem 'sorcery'
 gem 'haml-rails'
-gem 'zurb-foundation', '~> 4.0.0'
+gem 'zurb-foundation'
 
 
 # Gems used only for assets and not required
