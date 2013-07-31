@@ -1,5 +1,5 @@
 %h4 Your portal to space awaits...
-= form_tag user_sessions_path, :remote => true, :method => :post do
+= form_tag user_sessions_path, id: "new_user_session", :remote => true, :method => :post do
   .large-4.columns.spacer
   .large-4.columns
     = label_tag :username
