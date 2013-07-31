@@ -1,0 +1,25 @@
+%h1 Listing reservations
+
+%table
+  %tr
+    %th Seat
+    %th User
+    %th Flight
+    %th Date of flight
+    %th
+    %th
+    %th
+
+  - @reservations.each do |reservation|
+    %tr
+      %td= reservation.seat_id
+      %td= reservation.user_id
+      %td= reservation.flight_id
+      %td= reservation.date_of_flight
+      %td= link_to 'Show', reservation
+      %td= link_to 'Edit', edit_reservation_path(reservation)
+      %td= link_to 'Destroy', reservation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Reservation', new_reservation_path

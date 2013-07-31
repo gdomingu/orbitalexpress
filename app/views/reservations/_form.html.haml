@@ -1,0 +1,22 @@
+= form_for @reservation do |f|
+  - if @reservation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@reservation.errors.count, "error")} prohibited this reservation from being saved:"
+      %ul
+        - @reservation.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :seat_id
+    = f.number_field :seat_id
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :flight_id
+    = f.number_field :flight_id
+  .field
+    = f.label :date_of_flight
+    = f.datetime_select :date_of_flight
+  .actions
+    = f.submit 'Save'
