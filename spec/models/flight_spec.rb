@@ -5,6 +5,9 @@ describe "Flight" do
     @reservation = FactoryGirl.create(:reservation)
     @flight = FactoryGirl.create(:flight)
     @seat = FactoryGirl.create(:seat)
+    @docking_hour = FactoryGirl.create(:launch_window)
+    @launching_hour = FactoryGirl.create(:launch_window)
+    @weekday = FactoryGirl.create(:weekday)
   end
 ##Gabe is going to do a spec test for flight and location relationship
 
@@ -18,8 +21,6 @@ describe "Flight" do
     expect(@seat.reservations).to include(@reservation)
   end
 ##Alex is going to do launch window and weekday
-
-
 
 
 end
