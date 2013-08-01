@@ -8,17 +8,4 @@ body {
   opacity: .95;
   margin: auto;
   height:90%;
-  overflow: hidden;
-}
-
-img#dalek{
-  height:300px;
-  width:300px;
-  float:right;
-}
-
-img#robot{
-  height:400px;
-  width:300px;
-  float:right;
 }
