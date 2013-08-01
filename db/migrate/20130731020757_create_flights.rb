@@ -7,6 +7,8 @@ class CreateFlights < ActiveRecord::Migration
       t.integer :launching_from_id
       t.integer :docking_at_id
       t.integer :spaceship_id
+      t.integer :launch_day_id
+      t.integer :dock_day_id
 
       t.timestamps
     end

@@ -20,13 +20,10 @@ ActiveRecord::Schema.define(:version => 20130801004352) do
     t.integer  "launching_from_id"
     t.integer  "docking_at_id"
     t.integer  "spaceship_id"
+    t.integer  "launch_day_id"
+    t.integer  "dock_day_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-  end
-
-  create_table "flights_weekdays", :force => true do |t|
-    t.integer "flight_id"
-    t.integer "weekday_id"
   end
 
   create_table "locations", :force => true do |t|

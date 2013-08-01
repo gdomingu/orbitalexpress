@@ -23,12 +23,18 @@ weekdays = [
   "Saturday",
   "Sunday"
 ]
-
 weekdays.each do |day|
   Weekday.create(
     :name => day
     )
 end
+@monday = Weekday.find_by_name("Monday")
+@tuesday = Weekday.find_by_name("Tuesday")
+@wednesday = Weekday.find_by_name("Wednesday")
+@thursday = Weekday.find_by_name("Thursday")
+@friday = Weekday.find_by_name("Friday")
+@saturday = Weekday.find_by_name("Saturday")
+@sunday = Weekday.find_by_name("Sunday")
 
 hours_of_day = []
 o_clock = Time.strptime("00:00", "%H:%M")
@@ -101,19 +107,36 @@ end
   )
 
 # FLIGHTS
-Flight.create(
+@flight_1 = Flight.create(
   :name => "OE-101",
   :launching_from_id => @tokyo.id,
   :docking_at_id => @endor.id,
   :launching_hour => hours_of_day[1],
   :docking_hour => hours_of_day[6],
-  :spaceship_id => @hashrocket.id
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @monday.id,
+  :dock_day_id => @tuesday.id
   )
 
+@flight_2 = Flight.create(
+  :name => "OE-102",
+  :launching_from_id => @alderaan.id,
+  :docking_at_id => @santiago.id,
+  :launching_hour => hours_of_day[4],
+  :docking_hour => hours_of_day[8],
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @wednesday.id,
+  :dock_day_id => @thursday.id
+  )
 
-
-
-
-
-
+@flight_2 = Flight.create(
+  :name => "OE-103",
+  :launching_from_id => @tokyo.id,
+  :docking_at_id => @endor.id,
+  :launching_hour => hours_of_day[9],
+  :docking_hour => hours_of_day[11],
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @friday.id,
+  :dock_day_id => @saturday.id
+  )
 
