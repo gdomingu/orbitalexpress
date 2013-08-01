@@ -1,2 +1,2 @@
-module SeatsHelper
+module QuartersHelper
 end

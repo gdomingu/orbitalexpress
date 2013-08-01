@@ -7,12 +7,4 @@ class User < ActiveRecord::Base
 
   has_many :reservations
 
-  def authorize do
-    if self.is_admin?
-      raise "Welcome!"
-    else
-      raise "You must be an administrator to view this page."
-    end
-  end
-
 end
