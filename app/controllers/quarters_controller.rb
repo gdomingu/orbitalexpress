@@ -59,7 +59,7 @@ class QuartersController < ApplicationController
     @quarter = Quarter.find(params[:id])
 
     respond_to do |format|
-      if @quarter.update_attributes(params[:quarter)
+      if @quarter.update_attributes(params[:quarter])
         format.html { redirect_to @quarter, notice: 'Quarter was successfully updated.' }
         format.json { head :no_content }
       else
