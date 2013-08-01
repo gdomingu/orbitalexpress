@@ -3,7 +3,7 @@ Orbitexpress::Application.routes.draw do
   resources :spaceships
 
 
-  get 'search' => 'flights#index', :as => "search"
+  get 'search' => 'flights#search', :as => "search"
 
   resources :quarters
 
