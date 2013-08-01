@@ -4,16 +4,10 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
+
+    @flights = Flight.all
     @launching_locations = Location.all.select{ |x| x.launched_flights.any? }
-
-    search_query = params[:search]
-
-    if search_query.blank?
-      @flights = Flight.all
-    else
-      @search_results = Flight.search(params[:search])
-    end
-
+    @docking_locations = Location.all.select{ |x| x.docked_flights.any? }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,7 +15,18 @@ class FlightsController < ApplicationController
     end
   end
 
+
   def search
+    binding.pry
+    # @launching_locations = Location.all.select{ |x| x.launched_flights.any? }
+    # @docking_locations = Location.all.select{ |x| x.docked_flights.any? }
+    search_query = params[:search]
+
+    if search_query.blank?
+      @flights = Flight.all
+    else
+      @search_results = Flight.search(params[:search])
+    end
   end
 
   # GET /flights/1

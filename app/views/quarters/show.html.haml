@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @quarter.room_type
+%p
+  %b Number:
+  = @quarter.room_number
+
+= link_to 'Edit', edit_quarter_path(@quarter)
+\|
+= link_to 'Back', quarters_path

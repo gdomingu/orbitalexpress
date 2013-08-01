@@ -13,9 +13,9 @@ FactoryGirl.define do
     name "Sunday"
   end
 
-  factory :seat do
-    row 1
-    seat "A"
+  factory :quarter do
+    room_type "Vulcan"
+    room_number "1"
   end
 
   # factory :weekday do

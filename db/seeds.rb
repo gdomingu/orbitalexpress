@@ -1,6 +1,19 @@
 Weekday.delete_all
-Seat.delete_all
+Quarter.delete_all
+Location.delete_all
+Flight.delete_all
+Spaceship.delete_all
+User.delete_all
 
+# USERS
+@alex = User.create(
+  :username => "alexlin",
+  :email => "alex@alex.com",
+  :password => "password",
+  :password_confirmation => "password"
+  )
+
+# WEEKDAYS
 weekdays = [
   "Monday",
   "Tuesday",
@@ -10,47 +23,120 @@ weekdays = [
   "Saturday",
   "Sunday"
 ]
-
 weekdays.each do |day|
   Weekday.create(
     :name => day
     )
 end
+@monday = Weekday.find_by_name("Monday")
+@tuesday = Weekday.find_by_name("Tuesday")
+@wednesday = Weekday.find_by_name("Wednesday")
+@thursday = Weekday.find_by_name("Thursday")
+@friday = Weekday.find_by_name("Friday")
+@saturday = Weekday.find_by_name("Saturday")
+@sunday = Weekday.find_by_name("Sunday")
 
-# time = Time.strptime("00:00", "%H:%M")
-# 24.times do |x|
-#   # LaunchWindow.create(
-#   # :hour => time + x.hours
-#   # )
-# end
+hours_of_day = []
+o_clock = Time.strptime("00:00", "%H:%M")
+24.times do |x|
+  hours_of_day << (o_clock + x.hours)
+end
 
-rows = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G"
+# QUARTERS
+room_types = [
+  "Colonist",
+  "Family",
+  "Couple",
+  "Vulcan",
+  "Cryogenic Chamber"
 ]
-rows.each do |row|
-  6.times do |x|
+room_types.each do |type|
+  10.times do |x|
     x = x + 1
-    Seat.create(
-      :row => row,
-      :column => x
+    Quarter.create(
+      :room_type => type,
+      :room_number => x
       )
   end
 end
 
+# LOCATIONS
+@alderaan = Location.create(
+  :name => "Alderaan",
+  :spaceport => "King's Pass"
+  )
+@io = Location.create(
+  :name => "Io",
+  :spaceport => "Galileo Jupiter"
+  )
+@endor = Location.create(
+  :name => "Endor",
+  :spaceport => "Ewok Way"
+  )
+@london = Location.create(
+  :name => "London UK",
+  :spaceport => "Heathrow Intergalactic"
+  )
+@sanfran = Location.create(
+  :name => "San Francisco US",
+  :spaceport => "SF Intergalactic"
+  )
+@tokyo = Location.create(
+  :name => "Tokyo JP",
+  :spaceport => "Tanegashima Space Center"
+  )
+@miranda = Location.create(
+  :name => "Miranda",
+  :spaceport => "Paax Spaceport"
+  )
+@exoplanet = Location.create(
+  :name => "Exoplanet",
+  :spaceport => "Hubble Portal"
+  )
+@santiago = Location.create(
+  :name => "Santiago CL",
+  :spaceport => "Comodoro Spaceport"
+  )
+@risa = Location.create(
+  :name => "Risa",
+  :spaceport => "Jamaharon"
+  )
 
-Location.create(:name => "Alderaan", :spaceport => "King's Pass")
-Location.create(:name => "Io", :spaceport => "Galileo Jupiter")
-Location.create(:name => "Endor", :spaceport => "Ewok Way")
-Location.create(:name => "London UK", :spaceport => "Heathrow Intergalactic")
-Location.create(:name => "San Francisco US", :spaceport => "SF Intergalactic")
-Location.create(:name => "Tokyo JP", :spaceport => "Tanegashima Space Center")
-Location.create(:name => "Miranda", :spaceport => "Paax Spaceport")
-Location.create(:name => "Exoplanet", :spaceport => "Hubble Portal")
-Location.create(:name => "Santiago CL", :spaceport => "Comodoro Spaceport")
-Location.create(:name => "Risa", :spaceport => "Jamaharon")
+@hashrocket = Spaceship.create(
+  :name => "USS Hashrocket"
+  )
+
+# FLIGHTS
+@flight_1 = Flight.create(
+  :name => "OE-101",
+  :launching_from_id => @tokyo.id,
+  :docking_at_id => @endor.id,
+  :launching_hour => hours_of_day[1],
+  :docking_hour => hours_of_day[6],
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @monday.id,
+  :dock_day_id => @tuesday.id
+  )
+
+@flight_2 = Flight.create(
+  :name => "OE-102",
+  :launching_from_id => @alderaan.id,
+  :docking_at_id => @santiago.id,
+  :launching_hour => hours_of_day[4],
+  :docking_hour => hours_of_day[8],
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @wednesday.id,
+  :dock_day_id => @thursday.id
+  )
+
+@flight_2 = Flight.create(
+  :name => "OE-103",
+  :launching_from_id => @tokyo.id,
+  :docking_at_id => @endor.id,
+  :launching_hour => hours_of_day[9],
+  :docking_hour => hours_of_day[11],
+  :spaceship_id => @hashrocket.id,
+  :launch_day_id => @friday.id,
+  :dock_day_id => @saturday.id
+  )
+
