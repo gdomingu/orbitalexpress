@@ -3,6 +3,15 @@ Quarter.delete_all
 Location.delete_all
 Flight.delete_all
 Spaceship.delete_all
+User.delete_all
+
+# USERS
+User.create(
+  :username => "alexlin",
+  :email => "alex@alex.com",
+  :password => "password",
+  :password_confirmation => "password"
+  )
 
 # WEEKDAYS
 weekdays = [
