@@ -1,0 +1,16 @@
+= form_for @quarter do |f|
+  - if @quarter.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@quarter.errors.count, "error")} prohibited this seat from being saved:"
+      %ul
+        - @quarter.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :room_type
+    = f.text_field :room_type
+  .field
+    = f.label :room_number
+    = f.number_field :room_number
+  .actions
+    = f.submit 'Save'

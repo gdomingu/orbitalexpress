@@ -6,7 +6,7 @@ class CreateFlights < ActiveRecord::Migration
       t.time :docking_hour
       t.integer :launching_from_id
       t.integer :docking_at_id
-      t.integer :weekday_id
+      t.integer :spaceship_id
 
       t.timestamps
     end
