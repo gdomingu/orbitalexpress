@@ -1,5 +1,4 @@
 Weekday.delete_all
-LaunchWindow.delete_all
 Seat.delete_all
 
 weekdays = [
@@ -18,12 +17,12 @@ weekdays.each do |day|
     )
 end
 
-time = Time.strptime("00:00", "%H:%M")
-24.times do |x|
-  LaunchWindow.create(
-  :hour => time + x.hours
-  )
-end
+# time = Time.strptime("00:00", "%H:%M")
+# 24.times do |x|
+#   # LaunchWindow.create(
+#   # :hour => time + x.hours
+#   # )
+# end
 
 rows = [
   "A",

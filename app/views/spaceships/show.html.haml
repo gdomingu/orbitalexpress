@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @spaceship.name
+
+= link_to 'Edit', edit_spaceship_path(@spaceship)
+\|
+= link_to 'Back', spaceships_path

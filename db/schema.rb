@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731031255) do
+ActiveRecord::Schema.define(:version => 20130801004352) do
 
   create_table "flights", :force => true do |t|
     t.string   "name"
-    t.integer  "launch_hour_id"
-    t.integer  "docking_hour_id"
+    t.time     "launching_hour"
+    t.time     "docking_hour"
     t.integer  "launching_from_id"
     t.integer  "docking_at_id"
     t.integer  "weekday_id"
@@ -27,12 +27,6 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
   create_table "flights_weekdays", :force => true do |t|
     t.integer "flight_id"
     t.integer "weekday_id"
-  end
-
-  create_table "launch_windows", :force => true do |t|
-    t.time     "hour"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "locations", :force => true do |t|
@@ -58,6 +52,12 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "spaceships", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username",         :null => false
     t.string   "email"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
     t.string   "salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.boolean  "is_admin"
   end
 
   create_table "weekdays", :force => true do |t|

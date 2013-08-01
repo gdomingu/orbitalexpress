@@ -1,0 +1,19 @@
+%h1 Listing spaceships
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @spaceships.each do |spaceship|
+    %tr
+      %td= spaceship.name
+      %td= link_to 'Show', spaceship
+      %td= link_to 'Edit', edit_spaceship_path(spaceship)
+      %td= link_to 'Destroy', spaceship, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Spaceship', new_spaceship_path
