@@ -1,9 +1,16 @@
 %h1 Welcome to Orbital Express
 
+%div.large-4.columns
+  = form_tag search_path, :method => "get" do
+    / = slect_tag "Launchport",'', :placeholder => "Launch Port", :name => nil
+    / = text_field_tag "Dockingport" ,'', :placeholder => "Docking Port", :name => nil
+    = select_tag :launching_from_id, options_from_collection_for_select(@launching_locations, :id, :name)
 
-= form_tag search_path, :method => "get" do
-  = text_field_tag "query"
-  = button_tag "Search", :type => "submit", :name => nil
+    %p Date:
+    %input{:type => "text", :id => "datepicker"}
+
+
+    = button_tag "Search", :type => "submit", :name => nil
 
 %table
   %tr
@@ -29,6 +36,4 @@
       %td= link_to 'Edit', edit_flight_path(flight)
       %td= link_to 'Destroy', flight, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Flight', new_flight_path

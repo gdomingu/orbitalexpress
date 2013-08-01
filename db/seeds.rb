@@ -45,4 +45,13 @@ rows.each do |row|
 end
 
 
-
+Location.create(:name => "Alderaan", :spaceport => "King's Pass")
+Location.create(:name => "Io", :spaceport => "Galileo Jupiter")
+Location.create(:name => "Endor", :spaceport => "Ewok Way")
+Location.create(:name => "London UK", :spaceport => "Heathrow Intergalactic")
+Location.create(:name => "San Francisco US", :spaceport => "SF Intergalactic")
+Location.create(:name => "Tokyo JP", :spaceport => "Tanegashima Space Center")
+Location.create(:name => "Miranda", :spaceport => "Paax Spaceport")
+Location.create(:name => "Exoplanet", :spaceport => "Hubble Portal")
+Location.create(:name => "Santiago CL", :spaceport => "Comodoro Spaceport")
+Location.create(:name => "Risa", :spaceport => "Jamaharon")

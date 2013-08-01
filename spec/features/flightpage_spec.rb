@@ -8,7 +8,8 @@ describe "Flightpage" do
 
 end
 
-describe "searching for a flight by origin spaceport" do
+describe "searching" do
+
 
 end
 
