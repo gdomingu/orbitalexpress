@@ -56,13 +56,13 @@ ActiveRecord::Schema.define(:version => 20130801004352) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",         :null => false
+    t.string   "username",                            :null => false
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.boolean  "is_admin"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "is_admin",         :default => false
   end
 
   create_table "weekdays", :force => true do |t|
