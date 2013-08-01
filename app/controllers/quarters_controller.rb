@@ -1,8 +1,8 @@
-class SeatsController < ApplicationController
+class QuartersController < ApplicationController
   # GET /seats
   # GET /seats.json
   def index
-    @seats = Seat.all
+    @quarters = Quarter.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class SeatsController < ApplicationController
   # GET /seats/1
   # GET /seats/1.json
   def show
-    @seat = Seat.find(params[:id])
+    @quarter = Quarter.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,31 +24,31 @@ class SeatsController < ApplicationController
   # GET /seats/new
   # GET /seats/new.json
   def new
-    @seat = Seat.new
+    @quarter = Quarter.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @seat }
+      format.json { render json: @quarter }
     end
   end
 
   # GET /seats/1/edit
   def edit
-    @seat = Seat.find(params[:id])
+    @quarter = Quarter.find(params[:id])
   end
 
   # POST /seats
   # POST /seats.json
   def create
-    @seat = Seat.new(params[:seat])
+    @quarter = Quarter.new(params[:seat])
 
     respond_to do |format|
-      if @seat.save
-        format.html { redirect_to @seat, notice: 'Seat was successfully created.' }
-        format.json { render json: @seat, status: :created, location: @seat }
+      if @quarter.save
+        format.html { redirect_to @quarter, notice: 'Quarter was successfully created.' }
+        format.json { render json: @quarter, status: :created, location: @quarter }
       else
         format.html { render action: "new" }
-        format.json { render json: @seat.errors, status: :unprocessable_entity }
+        format.json { render json: @quarter.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +56,15 @@ class SeatsController < ApplicationController
   # PUT /seats/1
   # PUT /seats/1.json
   def update
-    @seat = Seat.find(params[:id])
+    @quarter = Quarter.find(params[:id])
 
     respond_to do |format|
-      if @seat.update_attributes(params[:seat])
-        format.html { redirect_to @seat, notice: 'Seat was successfully updated.' }
+      if @quarter.update_attributes(params[:quarter)
+        format.html { redirect_to @quarter, notice: 'Quarter was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @seat.errors, status: :unprocessable_entity }
+        format.json { render json: @quarter.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,11 +72,11 @@ class SeatsController < ApplicationController
   # DELETE /seats/1
   # DELETE /seats/1.json
   def destroy
-    @seat = Seat.find(params[:id])
-    @seat.destroy
+    @quarter = Quarter.find(params[:id])
+    @quarter.destroy
 
     respond_to do |format|
-      format.html { redirect_to seats_url }
+      format.html { redirect_to quarter_url }
       format.json { head :no_content }
     end
   end
