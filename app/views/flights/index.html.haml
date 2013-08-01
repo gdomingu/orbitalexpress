@@ -2,13 +2,10 @@
 
 %div.large-4.columns
   = form_tag search_path, :method => "get" do
-    / = slect_tag "Launchport",'', :placeholder => "Launch Port", :name => nil
-    / = text_field_tag "Dockingport" ,'', :placeholder => "Docking Port", :name => nil
     = select_tag :launching_from_id, options_from_collection_for_select(@launching_locations, :id, :name)
-
+    = select_tag :docking_at_id, options_from_collection_for_select(@docking_locations, :id, :name)
     %p Date:
-    %input{:type => "text", :id => "datepicker"}
-
+    %input{:type => "text", :id => "datepicker", :name => "date"}
 
     = button_tag "Search", :type => "submit", :name => nil
 
@@ -27,11 +24,10 @@
   - @flights.each do |flight|
     %tr
       %td= flight.name
-      %td= flight.launch_hour_id
-      %td= flight.docking_hour_id
+      %td= flight.launching_hour
+      %td= flight.docking_hour
       %td= flight.launching_from_id
       %td= flight.docking_at_id
-      %td= flight.weekday_id
       %td= link_to 'Show', flight
       %td= link_to 'Edit', edit_flight_path(flight)
       %td= link_to 'Destroy', flight, :method => :delete, :data => { :confirm => 'Are you sure?' }
