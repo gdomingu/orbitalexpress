@@ -1,6 +1,8 @@
 class SpaceshipsController < ApplicationController
   # GET /spaceships
   # GET /spaceships.json
+  before_filter :authorize
+
   def index
     @spaceships = Spaceship.all
 
