@@ -8,6 +8,9 @@ body {
   opacity: .95;
   margin: auto;
   height:90%;
+<<<<<<< HEAD
+}
+=======
   overflow: hidden;
 }
 
@@ -24,3 +27,4 @@ img#robot{
 }
 
 /*adding this so i can merge*/
+>>>>>>> form_errors

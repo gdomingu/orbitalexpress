@@ -1,10 +1,11 @@
 class Flight < ActiveRecord::Base
-  has_and_belongs_to_many :weekdays
-
-  attr_accessible :docking_at_id, :docking_hour, :launching_hour, :launching_from_id, :name, :spaceship_id
+  attr_accessible :docking_at_id, :docking_hour, :launching_hour, :launching_from_id, :name, :spaceship_id, :launch_day_id, :dock_day_id
 
   has_many :seats, :through => :reservations
   has_many :reservations
+
+  belongs_to :launch_day, :class_name => "Weekday"
+  belongs_to :dock_day, :class_name => "Weekday"
 
   belongs_to :launch_location, :class_name => "Location"
   belongs_to :docking_location, :class_name => "Location"
