@@ -1,8 +1,8 @@
 class CreateSeats < ActiveRecord::Migration
   def change
     create_table :seats do |t|
-      t.integer :row
-      t.string :seat
+      t.string :row
+      t.integer :column
 
       t.timestamps
     end

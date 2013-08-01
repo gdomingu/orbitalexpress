@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20130731031255) do
   end
 
   create_table "seats", :force => true do |t|
-    t.integer  "row"
-    t.string   "seat"
+    t.string   "row"
+    t.integer  "column"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

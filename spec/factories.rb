@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :location do
+  factory :location,  aliases: [:departure_loc, :arrival_loc] do
     name "Alderaan"
     spaceport "King's Pass"
   end
@@ -11,6 +11,11 @@ FactoryGirl.define do
 
   factory :weekday,  aliases: [:wday] do
     name "Sunday"
+  end
+
+  factory :seat do
+    row 1
+    seat "A"
   end
 
   # factory :weekday do

@@ -3,4 +3,5 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :flight
   belongs_to :seat
+  belongs_to :user
 end

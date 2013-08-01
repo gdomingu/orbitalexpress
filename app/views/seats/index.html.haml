@@ -1,21 +1,19 @@
 %h1 Listing seats
 
-%table
-  %tr
-    %th Row
-    %th Seat
-    %th
-    %th
-    %th
+/ %table
+/   %tr
+/     %th Row
+/     %th Seat
+/     %th
+/     %th
+/     %th
 
-  - @seats.each do |seat|
-    %tr
-      %td= seat.row
-      %td= seat.seat
-      %td= link_to 'Show', seat
-      %td= link_to 'Edit', edit_seat_path(seat)
-      %td= link_to 'Destroy', seat, :method => :delete, :data => { :confirm => 'Are you sure?' }
+/   - @seats.each do |seat|
+/     %tr
+/       %td= seat.row
+/       %td= seat.column
+/       %td= link_to 'Show', seat
 
-%br
-
-= link_to 'New Seat', new_seat_path
+/ %br
+- seats.each do |seat|
+  <div id="#{seat.row}-#{seat.column}"></div>
