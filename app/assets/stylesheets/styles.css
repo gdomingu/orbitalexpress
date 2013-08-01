@@ -8,4 +8,5 @@ body {
   opacity: .95;
   margin: auto;
   height:90%;
+  overflow: hidden;
 }
