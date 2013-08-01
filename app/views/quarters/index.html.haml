@@ -1,19 +1,7 @@
 %h1 Listing Quarters
 
-/ %table
-/   %tr
-/     %th Row
-/     %th Seat
-/     %th
-/     %th
-/     %th
-
-/   - @seats.each do |seat|
-/     %tr
-/       %td= seat.row
-/       %td= seat.column
-/       %td= link_to 'Show', seat
-
-/ %br
-/ - seats.each do |seat|
-/   <div id="#{seat.row}-#{seat.column}"></div>
+.quarters_text
+  Please select your quarters:
+  - @quarters_types.each do |room_type|
+    .quarters_option
+      = room_type

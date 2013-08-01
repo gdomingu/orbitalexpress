@@ -3,6 +3,8 @@ class QuartersController < ApplicationController
   # GET /seats.json
   def index
     @quarters = Quarter.all
+    # @quarters_types = @quarters.map{|x| x.room_type}.uniq
+    @quarters_types = Quarter.pluck(:room_type).uniq
 
     respond_to do |format|
       format.html # index.html.erb

@@ -36,12 +36,6 @@ end
 @saturday = Weekday.find_by_name("Saturday")
 @sunday = Weekday.find_by_name("Sunday")
 
-hours_of_day = []
-o_clock = Time.strptime("00:00", "%H:%M")
-24.times do |x|
-  hours_of_day << (o_clock + x.hours)
-end
-
 # QUARTERS
 room_types = [
   "Colonist",
@@ -102,9 +96,17 @@ end
   :spaceport => "Jamaharon"
   )
 
+# SPACESHIPS
 @hashrocket = Spaceship.create(
   :name => "USS Hashrocket"
   )
+
+# TIME FOR FLIGHTS
+hours_of_day = []
+o_clock = Time.strptime("00:00", "%H:%M")
+24.times do |x|
+  hours_of_day << (o_clock + x.hours)
+end
 
 # FLIGHTS
 @flight_1 = Flight.create(
