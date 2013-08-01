@@ -4,14 +4,10 @@ FactoryGirl.define do
     spaceport "King's Pass"
   end
 
-  factory :reservation do
-    date_of_flight Time.now
-  end
-
-    # factory :location do
-    #   name "San Francisco"
-    #   spaceport "SF Intergalactic Spaceport"
-    # end
+  # factory :location, aliases: [:arrival_loc] do
+  #   name "San Francisco"
+  #   spaceport "SF Intergalactic Spaceport"
+  # end
 
   factory :weekday,  aliases: [:wday] do
     name "Sunday"
