@@ -13,6 +13,13 @@ User.delete_all
   :password_confirmation => "password"
   )
 
+admin = User.create(
+  :username => "admin",
+  :password => "password",
+  :password_confirmation => "password",
+  :is_admin => true
+  )
+
 # WEEKDAYS
 weekdays = [
   "Monday",
