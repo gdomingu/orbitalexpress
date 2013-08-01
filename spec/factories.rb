@@ -4,31 +4,17 @@ FactoryGirl.define do
     spaceport "King's Pass"
   end
 
-  # factory :location, aliases: [:arrival_loc] do
-  #   name "San Francisco"
-  #   spaceport "SF Intergalactic"
-  # end
-
   factory :weekday,  aliases: [:wday] do
     name "Sunday"
-  end
-
-  factory :quarter do
-    room_type "Vulcan"
-    room_number "1"
   end
 
   # factory :weekday do
   #   name "Wednesday"
   # end
 
-  factory :launch_window,  aliases:[:leave, :arrive] do
-    hour 13
+  factory :reservation do
+    date_of_flight Time.now
   end
-
-  # factory :launch_window do
-  #   hour 6
-  # end
 
   factory :user do
     username "gabedo"
@@ -37,13 +23,15 @@ FactoryGirl.define do
     password_confirmation "password"
   end
 
+  factory :quarter do
+    room_type "Vulcan"
+    room_number 3
+  end
+
   factory :flight do
     name "su1300"
-    leave
-    arrive
-    departure_loc
-    arrival_loc
-    wday
+    docking_hour Time.now
+    launching_hour Time.now
   end
 
 end

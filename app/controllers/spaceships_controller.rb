@@ -6,7 +6,7 @@ class SpaceshipsController < ApplicationController
   def authorize
     @user = current_user
     if @user.is_admin?
-      raise "Welcome!"
+      # raise "Welcome!"
     else
       raise "You must be an administrator to view this page."
     end
