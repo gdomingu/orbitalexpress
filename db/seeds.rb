@@ -6,7 +6,7 @@ Spaceship.delete_all
 User.delete_all
 
 # USERS
-User.create(
+@alex = User.create(
   :username => "alexlin",
   :email => "alex@alex.com",
   :password => "password",
@@ -55,29 +55,59 @@ room_types.each do |type|
 end
 
 # LOCATIONS
-Location.create(:name => "Alderaan", :spaceport => "King's Pass")
-Location.create(:name => "Io", :spaceport => "Galileo Jupiter")
-Location.create(:name => "Endor", :spaceport => "Ewok Way")
-Location.create(:name => "London UK", :spaceport => "Heathrow Intergalactic")
-Location.create(:name => "San Francisco US", :spaceport => "SF Intergalactic")
-Location.create(:name => "Tokyo JP", :spaceport => "Tanegashima Space Center")
-Location.create(:name => "Miranda", :spaceport => "Paax Spaceport")
-Location.create(:name => "Exoplanet", :spaceport => "Hubble Portal")
-Location.create(:name => "Santiago CL", :spaceport => "Comodoro Spaceport")
-Location.create(:name => "Risa", :spaceport => "Jamaharon")
+@alderaan = Location.create(
+  :name => "Alderaan",
+  :spaceport => "King's Pass"
+  )
+@io = Location.create(
+  :name => "Io",
+  :spaceport => "Galileo Jupiter"
+  )
+@endor = Location.create(
+  :name => "Endor",
+  :spaceport => "Ewok Way"
+  )
+@london = Location.create(
+  :name => "London UK",
+  :spaceport => "Heathrow Intergalactic"
+  )
+@sanfran = Location.create(
+  :name => "San Francisco US",
+  :spaceport => "SF Intergalactic"
+  )
+@tokyo = Location.create(
+  :name => "Tokyo JP",
+  :spaceport => "Tanegashima Space Center"
+  )
+@miranda = Location.create(
+  :name => "Miranda",
+  :spaceport => "Paax Spaceport"
+  )
+@exoplanet = Location.create(
+  :name => "Exoplanet",
+  :spaceport => "Hubble Portal"
+  )
+@santiago = Location.create(
+  :name => "Santiago CL",
+  :spaceport => "Comodoro Spaceport"
+  )
+@risa = Location.create(
+  :name => "Risa",
+  :spaceport => "Jamaharon"
+  )
 
-Spaceship.create(
+@hashrocket = Spaceship.create(
   :name => "USS Hashrocket"
   )
 
 # FLIGHTS
 Flight.create(
   :name => "OE-101",
-  :launching_from_id => 1,
-  :docking_at_id => 2,
+  :launching_from_id => @tokyo.id,
+  :docking_at_id => @endor.id,
   :launching_hour => hours_of_day[1],
   :docking_hour => hours_of_day[6],
-  :spaceship_id => 1
+  :spaceship_id => @hashrocket.id
   )
 
 
