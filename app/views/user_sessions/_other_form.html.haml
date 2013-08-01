@@ -1,0 +1,13 @@
+%h4 Your portal to space awaits...
+= form_tag user_sessions_path, id: "new_user_session", :method => :post do
+  .large-4.columns.spacer
+  .large-4.columns
+    = label_tag :username
+    = text_field_tag :username
+  .large-4.columns.spacer
+  .large-4.columns.spacer
+  .large-4.columns
+    = label_tag :password
+    = password_field_tag :password
+  .actions
+    = submit_tag "Engage", :class => "button"
