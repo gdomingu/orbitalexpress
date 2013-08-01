@@ -3,15 +3,6 @@ class SpaceshipsController < ApplicationController
   # GET /spaceships.json
   before_filter :authorize
 
-  def authorize
-    @user = current_user
-    if @user.is_admin?
-      # raise "Welcome!"
-    else
-      raise "You must be an administrator to view this page."
-    end
-  end
-
   def index
     @spaceships = Spaceship.all
 

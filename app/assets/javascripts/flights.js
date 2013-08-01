@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 
+
 $(function() {
-  $( "#datepicker" ).datepicker();
-});
+  return $("#datepicker").datepicker({dateFormat: "dd-mm-yy"});
+ });
