@@ -8,8 +8,8 @@ class Flight < ActiveRecord::Base
 
   belongs_to :launch_hour, :class_name => "LaunchWindow"
   belongs_to :docking_hour, :class_name => "LaunchWindow"
-  belongs_to :launch_location, :class_name => "Location", :foreign_key => "launching_from_id"
-  belongs_to :docking_location, :class_name => "Location", :foreign_key => "docking_at_id"
+  belongs_to :launch_location, :class_name => "Location"
+  belongs_to :docking_location, :class_name => "Location"
 
   def self.find_launch_hour
 
