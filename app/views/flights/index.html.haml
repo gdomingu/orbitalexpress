@@ -27,11 +27,10 @@
   - @flights.each do |flight|
     %tr
       %td= flight.name
-      %td= flight.launch_hour_id
-      %td= flight.docking_hour_id
+      %td= flight.launching_hour
+      %td= flight.docking_hour
       %td= flight.launching_from_id
       %td= flight.docking_at_id
-      %td= flight.weekday_id
       %td= link_to 'Show', flight
       %td= link_to 'Edit', edit_flight_path(flight)
       %td= link_to 'Destroy', flight, :method => :delete, :data => { :confirm => 'Are you sure?' }
