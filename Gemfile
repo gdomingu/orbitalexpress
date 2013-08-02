@@ -9,6 +9,8 @@ gem 'pg'
 gem 'sorcery'
 gem 'haml-rails'
 gem 'zurb-foundation'
+gem 'omniauth-twitter'
+
 group :development, :production do
   gem 'pry-rails'
   gem 'pry-debugger'
