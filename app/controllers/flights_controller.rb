@@ -25,7 +25,7 @@ class FlightsController < ApplicationController
      @launch = params[:launching_from_id]
      @dock = params[:docking_at_id]
      @results = Flight.where(:launch_day_id => @weekd_id, :launching_from_id => @launch, :docking_at_id => @dock)
-     #binding.pry
+
   end
 
   # GET /flights/1

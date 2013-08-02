@@ -2,6 +2,11 @@
 
 .quarters_text
   Please select your quarters:
-  - @quarters_types.each do |room_type|
+  - @quarters_info.each do |info|
     .quarters_option
-      = room_type
+      = info.room_type
+      %br
+      = info.room_description
+      %br
+      = image_tag info.room_image, :class => 'quarters_image'
+      %br

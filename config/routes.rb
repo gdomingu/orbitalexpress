@@ -7,7 +7,7 @@ Orbitexpress::Application.routes.draw do
 
   resources :quarters
 
-
+  post '/reservations/:id' => 'reservations#create', :as => "new_reservation"
   resources :reservations
 
 

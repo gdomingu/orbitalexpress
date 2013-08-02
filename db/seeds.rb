@@ -45,18 +45,20 @@ end
 
 # QUARTERS
 room_types = [
-  "Colonist",
-  "Family",
-  "Couple",
-  "Vulcan",
-  "Cryogenic Chamber"
+  ["Colonist", "This is for poor people."],
+  ["Family", "For Families."],
+  ["Couple","For couples."],
+  ["Vulcan", "For the elite."],
+  ["Cryogen", "For people who value their time."]
 ]
 room_types.each do |type|
   10.times do |x|
     x = x + 1
     Quarter.create(
-      :room_type => type,
-      :room_number => x
+      :room_type => type[0],
+      :room_number => x,
+      :room_image => type[0] + ".jpg",
+      :room_description => type[1]
       )
   end
 end
@@ -107,6 +109,7 @@ end
 @hashrocket1 = Spaceship.create(
   :name => "USS Hashrocket"
   )
+
 @hashrocket2 = Spaceship.create(
   :name => "HMS Dauntless"
   )
