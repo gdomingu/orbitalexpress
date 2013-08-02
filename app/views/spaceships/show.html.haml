@@ -9,16 +9,35 @@
     #map { position:absolute; top:0; bottom:0; width:100%; }
 
 %p#notice= notice
-
+.large-3.column
+.large.-9.column
 %p
   %b Name:
   = @spaceship.name
+  %ul
+    - @spaceship.flights.each do |flight|
+      %li
+        %b Flight Number:
+        = flight.id
+      %li
+        %b Launching From:
+        = Location.find_by_id(flight.launching_from_id).name.upcase
+        %b on
+        = flight.launch_day.name
+      %li
+        %b Docking At:
+        = Location.find_by_id(flight.docking_at_id).name.upcase
+        %b on
+        = flight.dock_day.name
+      %li
+
 
 - @spaceship.flights.each do |flight|
   .flight{data: {launching_title: Location.find_by_id(flight.launching_from_id).name, docking_title: Location.find_by_id(flight.docking_at_id).name}}
 
-#map_complete.span10
-
+%div.large-3.columns
+  %p
+#map_complete
 
 = link_to 'Edit', edit_spaceship_path(@spaceship)
 \|
