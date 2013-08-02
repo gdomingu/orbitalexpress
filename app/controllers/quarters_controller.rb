@@ -6,8 +6,7 @@ class QuartersController < ApplicationController
     @quarters_info = Quarter.find(:all, :select => 'DISTINCT room_type, room_image, room_description')
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @seats }
+      format.js
     end
   end
 
@@ -18,7 +17,7 @@ class QuartersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @seat }
+      format.js
     end
   end
 

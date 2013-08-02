@@ -8,6 +8,7 @@ Orbitexpress::Application.routes.draw do
   resources :quarters
 
   post '/reservations/:id' => 'reservations#create', :as => "new_reservation"
+  get '/reservations/:id' => 'reservations#verify', :as => "verify_reservation"
   resources :reservations
 
 

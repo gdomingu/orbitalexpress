@@ -1,16 +1,9 @@
-= form_for @quarter do |f|
-  - if @quarter.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@quarter.errors.count, "error")} prohibited this seat from being saved:"
-      %ul
-        - @quarter.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :room_type
-    = f.text_field :room_type
-  .field
-    = f.label :room_number
-    = f.number_field :room_number
-  .actions
-    = f.submit 'Save'
+Please select your quarters:
+- @quarters_info.each do |info|
+  .quarters_option
+    = link_to info.room_type, verify_reservation_path(info.room_type)
+    %br
+    = info.room_description
+    %br
+    = image_tag info.room_image, :class => 'quarters_image'
+    %br
