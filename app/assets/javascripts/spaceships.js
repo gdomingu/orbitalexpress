@@ -1,4 +1,4 @@
-var map = L.mapbox.map('map_complete', 'examples.map-20v6611k');
+var map = L.mapbox.map('map_complete', '');
 
 map.setView([30, -0], 1);
 var d = [];
@@ -47,6 +47,8 @@ var geoJson = {
 
 map.markerLayer.setGeoJSON(geoJson);
 
+L.imageOverlay('https://s3-us-west-2.amazonaws.com/gabe-random/pinwheel-galaxy.jpg').addTo(map);
+
 // / var markers = $('.leaflet-marker-pane img')
 // / var delay = 0;
 // / $.each(markers, function(k,v) {
@@ -56,8 +58,6 @@ map.markerLayer.setGeoJSON(geoJson);
 // /     marker.show();
 // /   }, delay);
 // / });
-
-// / map.addLayer(L.tileLayer('http://spacefellowship.com/wp-content/uploads/2010/10/pinwheel-galaxy.jpg'));
 
 // / map.markerLayer.on('mouseover', function(e) {
 // /     e.layer.openPopup();
