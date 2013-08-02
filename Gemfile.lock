@@ -95,6 +95,7 @@ GEM
     jwt (0.1.8)
       multi_json (>= 1.5)
     kgio (2.8.0)
+    leaflet-js (0.6.beta4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -227,6 +228,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-ui-rails
+  leaflet-js
   meta_request
   omniauth-twitter
   pg

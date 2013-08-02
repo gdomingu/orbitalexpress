@@ -8,15 +8,20 @@ describe "Flightpage" do
 
 end
 
-describe "searching" do
+# describe "searching" do
+#   select "Alderaan", :from => "launching_from_id"
+#   select "Tokyo", :from => "docking_at_id"
+#   select "August 23, 2013", :from => "datepicker"
 
+#   click_button "Submit"
 
-end
+#   expect(page).to have_text("OE-110")
+# end
 
-describe "searching for a flight by destination spaceport" do
+# describe "searching for a flight by destination spaceport" do
 
-end
+# end
 
-describe "searching for a flight by flight time" do
+# describe "searching for a flight by flight time" do
 
-end
+# end

@@ -10,11 +10,17 @@ class ApplicationController < ActionController::Base
   def admin?
     false
   end
+
   def authorize
     @user = current_user
     unless @user.is_admin?
       raise "You must be an administrator to view this page."
     end
+    # if @user.is_admin?
+    #   # redirect_back_or(true)
+    # else
+    #   raise "You must be an administrator to view this page."
+    # end
   end
 
 end

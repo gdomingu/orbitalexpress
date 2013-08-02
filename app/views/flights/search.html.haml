@@ -1,1 +1,21 @@
-%h1 Find a Flight
+%h1 Welcome to Orbital Express
+
+%div.large-4.columns
+
+%table
+  %tr
+    %th Flight Number
+    %th Launch Port
+    %th Spaceport
+    %th Docking Port
+    %th Weekday
+    %th Buy
+
+    - @results.each do |flight|
+      %tr
+        %td= flight.name
+        %td= flight.launch_location.name
+        %td= flight.launch_location.spaceport
+        %td= flight.docking_location.name
+        %td= flight.launch_day.name
+        %td= button_to "Reserve", new_reservation_path(flight.id)

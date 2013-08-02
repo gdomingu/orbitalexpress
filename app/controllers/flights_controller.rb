@@ -9,6 +9,7 @@ class FlightsController < ApplicationController
     @launching_locations = Location.all.select{ |x| x.launched_flights.any? }
     @docking_locations = Location.all.select{ |x| x.docked_flights.any? }
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @flights }
@@ -17,16 +18,14 @@ class FlightsController < ApplicationController
 
 
   def search
-    binding.pry
-    # @launching_locations = Location.all.select{ |x| x.launched_flights.any? }
-    # @docking_locations = Location.all.select{ |x| x.docked_flights.any? }
-    search_query = params[:search]
+     date_string = params[:date]
+     # starting_pt = params[:launching_from_id]
+     @weekd =  Date.parse(date_string).strftime("%A")
+     @weekd_id = Weekday.where(name: @weekd).first.id
+     @launch = params[:launching_from_id]
+     @dock = params[:docking_at_id]
+     @results = Flight.where(:launch_day_id => @weekd_id, :launching_from_id => @launch, :docking_at_id => @dock)
 
-    if search_query.blank?
-      @flights = Flight.all
-    else
-      @search_results = Flight.search(params[:search])
-    end
   end
 
   # GET /flights/1

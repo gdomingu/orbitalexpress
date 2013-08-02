@@ -23,4 +23,7 @@ img#robot{
   float:right;
 }
 
-/*adding this so i can merge*/
+#map_complete{
+  height: 500px;
+  width: 500px;
+}
