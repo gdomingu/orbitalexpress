@@ -42,12 +42,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to(:users, :notice => 'User was successfully created.') }
         format.js
       else
+        # binding.pry
         format.html { render action: "new" }
         format.js
       end

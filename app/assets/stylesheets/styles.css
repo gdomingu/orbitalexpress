@@ -29,6 +29,19 @@ img#robot{
   width:300px;
   float:right;
 }
+img#hal{
+  height:400px;
+  width:400px;
+  float:right;
+}
+img#r2d2{
+  height:400px;
+  width:300px;
+  float:right;
+}
+img#robo{
+  float:right;
+}
 
 #map_complete{
   height: 650px;

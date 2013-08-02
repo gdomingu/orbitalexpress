@@ -36,6 +36,9 @@ $('.flight').each(function(){
             [longRand2, latRand2]
       }
   });
+  pointList = [ [longRand1, latRand1], [longRand2, latRand2]];
+  line = new L.Polyline( pointList, { color: "purple" } );
+  map.addLayer(line);
 });
 
 var geoJson = {
@@ -45,7 +48,7 @@ var geoJson = {
 };
 
 
-map.markerLayer.setGeoJSON(geoJson);
+map.markerLayer.setGeoJSON(geoJson)
 
 L.imageOverlay('https://s3-us-west-2.amazonaws.com/gabe-random/pinwheel-galaxy.jpg').addTo(map);
 
