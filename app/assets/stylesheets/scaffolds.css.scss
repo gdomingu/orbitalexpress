@@ -1,9 +1,10 @@
 body {
-  background-color: #fff;
+  background-color: #003366;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  opacity: .90;
 }
 
 p, ol, ul, td {
@@ -34,7 +35,6 @@ div {
     margin-bottom: 10px;
   }
 }
-
 #notice {
   color: green;
 }

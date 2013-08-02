@@ -18,5 +18,9 @@
         %td= flight.launch_location.spaceport
         %td= flight.docking_location.name
         %td= flight.launch_day.name
-        %td= link_to "Select Your Quarters", quarters_path, :remote => true, :data => {"reveal-id" => "modal_window"}, :id => "quarters_select"
-        %td= button_to "Reserve", new_reservation_path(flight.id)
+        %td= link_to "Learn More", quarters_path, :remote => true, :data => {"reveal-id" => "modal_window"}, :id => "quarters_select"
+        %td
+          / = form_tag new_reservation_path(flight.id), :method => "post" do
+          = form_tag new_reservation_path(flight.id), :method => "get" do
+            = select_tag :quarters_id, options_from_collection_for_select(@quarters_types, :id, :room_type)
+            = button_tag "Reserve", :type => "submit", :name => nil

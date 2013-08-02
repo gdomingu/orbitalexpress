@@ -1,6 +1,8 @@
-%h1 Welcome to Orbital Express
 
-%div.large-4.columns
+
+%div.large-4.columns.panel.radius.callout.searchquery
+  %div
+    %h2 Pick Your Adventure
   = form_tag search_path, :method => "get" do
     = select_tag :launching_from_id, options_from_collection_for_select(@launching_locations, :id, :name)
     = select_tag :docking_at_id, options_from_collection_for_select(@docking_locations, :id, :name)
@@ -9,14 +11,15 @@
 
     = button_tag "Search", :type => "submit", :name => nil
 
-%table
-  %h1 All Current Flights
+%table.panel.radius.callout.clearfix
+
   %tr
     %th Flight Number
     %th Launch Port
     %th Spaceport
     %th Docking Port
     %th Day of Launch
+    %th Time of Launch
 
     - @flights.each do |flight|
       %tr
@@ -25,3 +28,4 @@
         %td= flight.launch_location.spaceport
         %td= flight.docking_location.name
         %td= flight.launch_day.name
+        %td= flight.launching_hour.strftime("%I:%M%p")

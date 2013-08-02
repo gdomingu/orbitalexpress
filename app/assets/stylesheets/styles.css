@@ -2,7 +2,14 @@ body {
   background-image: url('http://hdwallsize.com/wp-content/uploads/2013/05/Free-Download-Galaxy-Wallpaper-HD-Dekstop.jpg');
   background-position: bottom;
 }
+.searchquery {
+  padding-top: 50px;
+}
 
+caption{
+  font-weight:bold;
+  font-size: 16px;
+}
 #mainwrapper{
   background-color: white;
   opacity: .20;
@@ -26,4 +33,9 @@ img#robot{
 #map_complete{
   height: 650px;
   width: 650px;
+}
+
+table {
+  padding-left: 50px;
+  padding-right: 30px;
 }
