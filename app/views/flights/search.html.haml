@@ -9,7 +9,7 @@
     %th Spaceport
     %th Docking Port
     %th Weekday
-    %th Buy
+    %th Quarters
 
     - @results.each do |flight|
       %tr
@@ -18,4 +18,5 @@
         %td= flight.launch_location.spaceport
         %td= flight.docking_location.name
         %td= flight.launch_day.name
+        %td= link_to "Select Your Quarters", quarters_path
         %td= button_to "Reserve", new_reservation_path(flight.id)

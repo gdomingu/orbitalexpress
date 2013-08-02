@@ -10,6 +10,10 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def verify
+    @quarters_type = Quarter.where(:room_type => params[:id])
+  end
+
   # GET /reservations/1
   # GET /reservations/1.json
   def show
@@ -40,7 +44,6 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    binding.pry
     @reservation = Reservation.new(params[:reservation])
 
     respond_to do |format|
