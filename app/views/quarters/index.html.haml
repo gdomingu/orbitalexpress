@@ -1,12 +1,4 @@
 %h1 Listing Quarters
-
-.quarters_text
-  Please select your quarters:
-  - @quarters_info.each do |info|
-    .quarters_option
-      = link_to info.room_type, verify_reservation_path(info.room_type)
-      %br
-      = info.room_description
-      %br
-      = image_tag info.room_image, :class => 'quarters_image'
-      %br
+%div.large-4.columns
+  .quarters_text
+    = render 'form'
