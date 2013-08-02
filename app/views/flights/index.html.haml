@@ -10,26 +10,18 @@
     = button_tag "Search", :type => "submit", :name => nil
 
 %table
+  %h1 All Current Flights
   %tr
-    %th Name
-    %th Launch hour
-    %th Docking hour
-    %th Launching from
-    %th Docking at
-    %th Weekday
-    %th
-    %th
-    %th
+    %th Flight Number
+    %th Launch Port
+    %th Spaceport
+    %th Docking Port
+    %th Day of Launch
 
-  - @flights.each do |flight|
-    %tr
-      %td= flight.name
-      %td= flight.launching_hour
-      %td= flight.docking_hour
-      %td= flight.launching_from_id
-      %td= flight.docking_at_id
-      %td= link_to 'Show', flight
-      %td= link_to 'Edit', edit_flight_path(flight)
-      %td= link_to 'Destroy', flight, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-
+    - @flights.each do |flight|
+      %tr
+        %td= flight.name
+        %td= flight.launch_location.name
+        %td= flight.launch_location.spaceport
+        %td= flight.docking_location.name
+        %td= flight.launch_day.name
