@@ -1,8 +1,24 @@
+%head
+  %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+  %script{:src => "//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js"}
+  %link{:href => "//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css", :rel => "stylesheet"}
+  /[if lte IE 8]
+    /%link{:href => '//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css', :rel => 'stylesheet'}
+  %style
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+
 %p#notice= notice
 
 %p
   %b Name:
   = @spaceship.name
+
+- @spaceship.flights.each do |flight|
+  .flight{data: {launching_title: Location.find_by_id(flight.launching_from_id).name, docking_title: Location.find_by_id(flight.docking_at_id).name}}
+
+#map_complete.span10
+
 
 = link_to 'Edit', edit_spaceship_path(@spaceship)
 \|
