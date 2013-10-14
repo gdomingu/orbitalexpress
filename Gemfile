@@ -51,10 +51,13 @@ gem 'unicorn'
 # Deploy with Capistrano
 # gem 'capistrano'
 group :development, :test do
-  gem "factory_girl_rails"
+  # gem "factory_girl_rails"
   gem 'rspec-rails'
-  gem "capybara"
-  gem 'selenium-webdriver'
+  gem 'watir-rails'
+  # gem "capybara"
+  # gem 'selenium-webdriver'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 # To use debugger
 # gem 'debugger'

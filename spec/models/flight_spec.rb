@@ -19,9 +19,9 @@ describe "Flight" do
     expect(@quarter.reservations).to include(@reservation)
   end
 
-  it "has a weekday" do
-    @flight.weekdays << @weekday
-    expect(@flight.weekdays[0]).to eq(@weekday)
+  it "has a launch day" do
+    @flight.launch_day << @weekday
+    expect(@flight.weekday[0]).to eq(@weekday)
   end
 
 
